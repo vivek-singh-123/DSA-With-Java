@@ -1,4 +1,4 @@
-package Only_for_Practice;
+package Sorting;
 
 public class QuickSort {
     public static void main(String[] args) {
