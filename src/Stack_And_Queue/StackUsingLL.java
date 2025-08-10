@@ -6,8 +6,8 @@ public class StackUsingLL {
         Node next;
 
         Node(int data){
-            this.data=data;
-            this.next=null;
+            this.data=data; //since there are two data variables so, there were a chance to have the confusion
+            this.next=null;  //to avoid that confusion(ambiguity), that's why we are using 'this' keyword
         }
     }
 
@@ -34,8 +34,11 @@ public class StackUsingLL {
                 return -1;
             }
 
+            Node temp = head.next; //temp ko head.next pr bhej rhe hai bcz connection todna hai, ak baar connect tut
+                                   // jaye to aage jane ka rasta band ho jaye
             int top = head.data;
-            head=head.next;
+            head.next=null;
+            head=temp;
             return top;
         }
 
