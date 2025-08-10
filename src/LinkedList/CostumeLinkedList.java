@@ -1,6 +1,6 @@
-package CollectionFramework;
+package LinkedList;
 
-public class LinkedListEx {
+public class CostumeLinkedList {
     Node head;
 
     static class Node {
@@ -40,6 +40,34 @@ public class LinkedListEx {
         currNode.next = newNode;
     }
 
+    //delete - first
+    public void deleteFirst(){
+        if(head==null){
+            System.out.println("List is empty!");
+        }
+        head=head.next;
+    }
+
+    //delete - last
+    public void deleteLast(){
+        if(head==null){
+            System.out.println("List is empty!");
+        }
+
+        if(head.next == null){
+            head = null;
+            return;
+        }
+
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null){
+            secondLast=secondLast.next;
+            lastNode=lastNode.next;
+        }
+         secondLast.next=null;
+    }
+
     //print
     public void printList() {
         if (head == null) {
@@ -55,6 +83,7 @@ public class LinkedListEx {
         System.out.println("null");
     }
 
+
     //count
     public void size(){
         int count=0;
@@ -67,7 +96,7 @@ public class LinkedListEx {
     }
 
     public static void main(String[] args) {
-        LinkedListEx list = new LinkedListEx();
+        CostumeLinkedList list = new CostumeLinkedList();
         list.addFirst("a");
         list.addFirst("is");
         list.printList();
@@ -75,6 +104,18 @@ public class LinkedListEx {
         list.addLast("list");
         list.printList();
 
+        list.addFirst("This");
+        list.printList();
+
+        list.deleteFirst();
+        list.printList();
+
+        list.deleteLast();
+        list.printList();
+
+        list.size();
+        list.addFirst("this");
+        list.printList();
         list.size();
     }
 }
