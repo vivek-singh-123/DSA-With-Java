@@ -1,4 +1,4 @@
-package Stack_And_Queue;
+package Stacks;
 
 public class StackUsingLL {
     public static class Node{

@@ -1,4 +1,4 @@
-package Stack_And_Queue;
+package Stacks;
 
 import java.util.ArrayList;
 
