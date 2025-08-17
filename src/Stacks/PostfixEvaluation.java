@@ -13,7 +13,7 @@ public class PostfixEvaluation {
             int ascii=(int)ch;
             if(ascii>=48 && ascii<=57){
                 st.push(ascii-48);
-            }else if(ch=='-' || ch=='+' || ch=='*' || ch=='/'){
+            }else {
                 int v2=st.pop();
                 int v1=st.pop();
 
