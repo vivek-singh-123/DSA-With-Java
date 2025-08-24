@@ -1,6 +1,6 @@
 package Queue;
 
-public class reverseTheCompleteQueue {
+public class ReverseAndSumOfAllElement {
     public static class Node{
         int val;
         Node next;
@@ -31,28 +31,6 @@ public class reverseTheCompleteQueue {
             size++;
         }
 
-        //remove
-        public int remove(){
-            if(size == 0){
-                System.out.println("Queue is empty!");
-                return -1;
-            }
-
-            int x=head.val;
-            head=head.next;
-            size--;
-            return x;
-        }
-
-        //peek
-        public int peek(){
-            if(size == 0){
-                System.out.println("Queue is empty!");
-                return -1;
-            }
-            return head.val;
-        }
-
         //display
         public void display(){
             if(size == 0){
@@ -68,11 +46,6 @@ public class reverseTheCompleteQueue {
             System.out.println();
         }
 
-        //check empty
-        public boolean isEmpty(){
-            if(size == 0) return true;
-            else return false;
-        }
 
         //sum of all element in queue
         public int sum(){
@@ -87,18 +60,25 @@ public class reverseTheCompleteQueue {
 
         //reverse
         public void reverse() {
-            if (head == null) return;
+            Node prev=null;
+            Node current=head;
+            Node next;
 
-            int x = remove();
-            reverse();
-            add(x);
+            tail=head;
+
+            while(current != null){
+                next = current.next;
+                current.next = prev;
+                prev = current;
+                current = next;
+            }
+
+            head = prev;
         }
-
-
     }
+
     public static void main(String[] args) {
         queueL q=new queueL();
-        System.out.println(q.isEmpty());
         q.add(11);
         q.add(7);
         q.add(2);
