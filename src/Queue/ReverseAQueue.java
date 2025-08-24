@@ -2,8 +2,9 @@ package Queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
-public class displayQueue {
+public class ReverseAQueue {
     public static void main(String[] args) {
         Queue<Integer> q=new LinkedList<>();
         q.offer(2);
@@ -12,17 +13,20 @@ public class displayQueue {
         q.offer(7);
         q.offer(11);
 
-        Queue<Integer> q2=new LinkedList<>();
-        while (!q.isEmpty()){
-            System.out.print(q.peek()+" ");
-            q2.add(q.poll());
+        System.out.print("Org: "+q+" ");
 
+        Stack<Integer> st=new Stack<>();
+
+        while (!q.isEmpty()){
+            st.push(q.poll());
+        }
+
+        while (!st.empty()){
+            q.offer(st.pop());
         }
         System.out.println();
 
-        while (!q2.isEmpty()){
-            q.add(q2.poll());
-        }
-        System.out.println(q);
+        System.out.println("reversed: "+q+" ");
+
     }
 }
