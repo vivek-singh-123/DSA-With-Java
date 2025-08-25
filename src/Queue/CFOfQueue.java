@@ -2,7 +2,7 @@ package Queue;
 
 import java.util.*;
 
-public class basicCollectionFramework {
+public class CFOfQueue {
     public static void main(String[] args) {
        Deque<Integer> q0=new ArrayDeque<>(); //doubly ended queue when needed
                                         //doubly ended queue ke object ko singly ended queue ki tarah treat kiya jaa skta hai
