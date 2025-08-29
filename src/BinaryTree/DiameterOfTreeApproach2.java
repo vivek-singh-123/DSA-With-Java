@@ -1,7 +1,5 @@
 package BinaryTree;
 
-import com.sun.source.tree.Tree;
-
 public class DiameterOfTreeApproach2 {
     //node class
     public static class Node{
