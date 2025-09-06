@@ -9,14 +9,19 @@ public class MaxFrequentElement {
 
         Map<Integer, Integer> freq=new HashMap<>();
 
+//        for(int el: arr){
+//            if(!freq.containsKey(el)){
+//                freq.put(el, 1);
+//            }
+//            else {
+//                freq.put(el, freq.get(el)+1);
+//            }
+//        }
+
         for(int el: arr){
-            if(!freq.containsKey(el)){
-                freq.put(el, 1);
-            }
-            else {
-                freq.put(el, freq.get(el)+1);
-            }
+            freq.put(el,freq.getOrDefault(el, 0)+1);
         }
+
 
         int maxFreq=0; int ansKey=-1;
 
