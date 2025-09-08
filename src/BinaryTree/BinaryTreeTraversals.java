@@ -69,7 +69,7 @@ public class BinaryTreeTraversals {
     }
 
     //levelOrder traversal
-    public static void levelOrder(Node root){
+    public static void levelOrder(Node root){  //bfs
         if(root == null){
             return;
         }
