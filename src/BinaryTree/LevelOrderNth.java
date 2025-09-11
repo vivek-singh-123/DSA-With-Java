@@ -1,6 +1,9 @@
 package BinaryTree;
 
-public class NthLevelPrintElements {
+public class LevelOrderNth {
+
+                                    //Using Recursion + Height of Tree → Recursive
+
     public static class Node{
         int val;
         Node left;
@@ -24,7 +27,7 @@ public class NthLevelPrintElements {
     }
 
     //print nth level elements
-    public static void nthLevel(Node root, int level){
+    public static void nthLevel(Node root, int level){     //print left to right
         if(root == null){
             return;
         }
@@ -49,7 +52,7 @@ public class NthLevelPrintElements {
         B.left=E;
         B.right=F;
 
-        int level = height(root)+1;
+        int level = height(root)+1;   //calculate level of tree
 
         for(int i=1; i<=level; i++){
             nthLevel(root, i);

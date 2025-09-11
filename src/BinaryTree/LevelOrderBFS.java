@@ -3,7 +3,10 @@ package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BFS {
+public class LevelOrderBFS {
+
+                                        //Using Queue (BFS Approach) → Iterative
+
     public static class Node{
         int data;
         Node left;
@@ -15,7 +18,7 @@ public class BFS {
     }
 
     //this is level order traversal
-    public static void bfs(Node root){            //this is iterative approach
+    public static void bfs(Node root){
         Queue<Node> q=new LinkedList<>();
         if(root != null){
             q.add(root);

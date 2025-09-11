@@ -56,7 +56,7 @@ public class Traversals {
         inorder(root.right);
     }
     public static void main(String[] args) {
-        int[] values={10,5,15,2,8,12,17};   //arbitrary array of values
+        int[] values={10,5,15,2,8,12,17};
         Node root=null;
 
         for(int i=0; i<values.length; i++){
