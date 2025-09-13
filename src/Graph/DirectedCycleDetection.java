@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.ArrayList;
 
-public class CycleDetection {
+public class DirectedCycleDetection {
     //Edge class
     public static class Edge{
         int source;
