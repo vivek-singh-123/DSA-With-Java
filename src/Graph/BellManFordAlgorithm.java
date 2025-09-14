@@ -58,16 +58,15 @@ public class BellManFordAlgorithm {
         }
 
         //detect -ve wt cycle
-        for(int k=0; k<V-1; k++){
-            for(int i=0; i<V; i++){
-                for(int j=0; j<graph[i].size(); j++){
-                    Edge e = graph[i].get(j);
-                    int u = e.source;
-                    int v = e.destination;
+        for(int i=0; i<V; i++){
+            for(int j=0; j<graph[i].size(); j++){
+                Edge e = graph[i].get(j);
+                int u = e.source;
+                int v = e.destination;
 
-                    if(dist[u] != Integer.MAX_VALUE && dist[u]+e.weight<dist[v]){
-                        System.out.println("negative wt cycle");
-                    }
+                if(dist[u] != Integer.MAX_VALUE && dist[u]+e.weight < dist[v]){
+                    System.out.println("negative weight cycle!");
+                    return;
                 }
             }
         }
