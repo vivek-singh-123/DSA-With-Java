@@ -15,12 +15,12 @@ public class ImplementMaxHeap {
 
         //insert into the max heap
         public void insert(int value){
+            //check the size of heap
             if(curr_size == total_size){
                 System.out.println("heap size overflow");
                 return;
             }
 
-            //check the size of heap
             arr[curr_size] = value;
             int index = curr_size;
             curr_size++;
@@ -32,7 +32,7 @@ public class ImplementMaxHeap {
                 arr[(index-1)/2] = temp;
                 index = (index-1)/2;
             }
-            System.out.println(arr[index]+" is inserted into heap");
+            System.out.println(value+" is inserted into heap");
         }
 
 
