@@ -7,7 +7,7 @@ public class CFOfQueue {
        Deque<Integer> q0=new ArrayDeque<>(); //doubly ended queue when needed
                                         //doubly ended queue ke object ko singly ended queue ki tarah treat kiya jaa skta hai
 
-//        Queue<Integer> q1=new PriorityQueue<>();   //when we want to create max heap/min heap/priority queue
+//        Queue<Integer> q1=new PriorityQ<>();   //when we want to create max heap/min heap/priority queue
 //        Queue<Integer> q3=new LinkedList<>();       //jab singly ended queue ka object bnanan hoga tab LL constructor ka use krenge
                                                 //is created object me offer and poll use krenge
 
