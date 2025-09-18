@@ -17,7 +17,7 @@ public class RatMazePath {
         int row=3;
         int column=3;
 
-        int totalWays = maze(1,1,row,column);
+        int totalWays = maze(0,0,row-1,column-1);
         System.out.println(totalWays);
     }
 }

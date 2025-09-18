@@ -18,6 +18,6 @@ public class PrintRatMazePath {
     public static void main(String[] args) {
         int rows = 3;
         int columns = 3;
-        printPath(1,1,rows,columns,"");
+        printPath(0,0,rows-1,columns-1,"");
     }
 }
