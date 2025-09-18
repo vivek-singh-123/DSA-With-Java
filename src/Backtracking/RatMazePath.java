@@ -5,7 +5,7 @@ public class RatMazePath {
         if(sr > er || sc > ec){
             return 0;
         }
-        if(sr == er){
+        if(sr == er && sc == ec){
             return 1;
         }
         int downWays = maze(sr+1, sc, er, ec);
