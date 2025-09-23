@@ -1,23 +1,20 @@
 package PracticeQuestion;
 
-import java.util.Scanner;
-
 public class CountVowelsAndConsonants {
     public static void main(String[] args) {
-        String str;
-        System.out.print("enter string: ");
-        Scanner s=new Scanner(System.in);
-        str=s.nextLine();
+        String str = "there";
+        int vcounter = 0;
+        int ccounter = 0;
 
-        int vowel=0, consonent=0;
         for(int i=0; i<str.length(); i++){
-            if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u'){
-                vowel++;
+            char currChar = str.charAt(i);
+            if(currChar == 'a' || currChar == 'e' || currChar == 'i' || currChar == 'o' || currChar == 'u'){
+                vcounter++;
             }else {
-                consonent++;
+                ccounter++;
             }
         }
-        System.out.println("total vowel: "+vowel);
-        System.out.println("total constant: "+consonent);
+
+        System.out.println("vowels: "+vcounter+" consonants: "+ccounter);
     }
 }
