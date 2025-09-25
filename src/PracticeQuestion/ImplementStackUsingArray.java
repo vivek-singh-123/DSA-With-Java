@@ -53,7 +53,7 @@ public class ImplementStackUsingArray {
        }
 
        public void display(){
-           for(int i=0; i<idx; i++){
+           for(int i=idx-1; i>=0; i--){
                System.out.print(arr[i]+" ");
            }
            System.out.println();
