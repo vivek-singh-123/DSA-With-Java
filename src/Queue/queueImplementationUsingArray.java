@@ -13,12 +13,12 @@ public class queueImplementationUsingArray {
         }
 
         //check empty
-        public static boolean isEmpty(){
+        public boolean isEmpty(){
             return rear == -1;
         }
 
         //enqueue(add)
-        public static void add(int data){
+        public void add(int data){
             if(rear == size-1){
                 System.out.println("queue size is full!");
                 return;
@@ -29,7 +29,7 @@ public class queueImplementationUsingArray {
         }
 
         //dequeue(remove)
-        public static int remove(){
+        public int remove(){
             if(isEmpty()){
                 System.out.println("queue is empty!");
                 return -1;
@@ -44,7 +44,7 @@ public class queueImplementationUsingArray {
         }
 
         //peek
-        public static int peek(){
+        public int peek(){
             if (isEmpty()){
                 System.out.println("queue is empty!");
                 return -1;
