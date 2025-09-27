@@ -1,12 +1,12 @@
 package PracticeQuestion;
 
-public class MaxHeapImplement {
-    public static class maxHeap{
+public class MinHeapImplementation {
+    public static class minHeap{
         int[] arr;
         int size;
         int total_size;
 
-        maxHeap(int n){
+        minHeap(int n){
             arr=new int[n];
             size=0;
             total_size=n;
@@ -15,7 +15,7 @@ public class MaxHeapImplement {
         //insert
         public void insert(int value){
             if(size == total_size){
-                System.out.println("maxheap overload");
+                System.out.println("minheap overload");
                 return;
             }
 
@@ -23,7 +23,7 @@ public class MaxHeapImplement {
             int index = size;
             size++;
 
-            while (index > 0 && arr[(index-1)/2] < arr[index]){
+            while (index > 0 && arr[(index-1)/2] > arr[index]){
                 int temp = arr[index];
                 arr[index] = arr[(index-1)/2];
                 arr[(index-1)/2] = temp;
@@ -41,29 +41,29 @@ public class MaxHeapImplement {
 
         //heapify for delete node
         public void heapify(int index){
-            int largest = index;
+            int smallest = index;
             int left = 2*index+1;
             int right = 2*index+2;
 
-            if(left < size && arr[left] > arr[largest]){
-                largest = left;
+            if(left < size && arr[left] < arr[smallest]){
+                smallest = left;
             }
-            if(right < size && arr[right] > arr[largest]){
-                largest = right;
+            if(right < size && arr[right] < arr[smallest]){
+                smallest = right;
             }
 
-            if(largest != index){
+            if(smallest != index){
                 int temp = arr[index];
-                arr[index] = arr[largest];
-                arr[largest] = temp;
+                arr[index] = arr[smallest];
+                arr[smallest] = temp;
 
-                heapify(largest);
+                heapify(smallest);
             }
         }
         //delete
         public void delete(){
             if(size == 0){
-                System.out.println("maxheap is underflow");
+                System.out.println("minheap is underflow");
                 return;
             }
 
@@ -76,7 +76,7 @@ public class MaxHeapImplement {
 
     }
     public static void main(String[] args) {
-        maxHeap mh=new maxHeap(5);
+        minHeap mh=new minHeap(5);
         mh.insert(10);
         mh.insert(20);
         mh.insert(5);
