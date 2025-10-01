@@ -1,4 +1,4 @@
-package PracticeQuestion;
+package Graph;
 
 import java.util.Scanner;
 
