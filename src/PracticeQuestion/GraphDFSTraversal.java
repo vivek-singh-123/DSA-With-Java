@@ -1,10 +1,8 @@
 package PracticeQuestion;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
-public class GraphBFSTraversal {
+public class GraphDFSTraversal {
     public static class Edge{
         int src;
         int dest;
@@ -41,34 +39,28 @@ public class GraphBFSTraversal {
         graph[5].add(new Edge(5, 6));
 
         graph[6].add(new Edge(6, 5));
-
     }
+    public static void dfs(ArrayList<Edge> graph[], int curr, boolean vis[]){
+        System.out.print(curr+" ");
+        vis[curr] = true;
 
-    public static void bfs(ArrayList<Edge> graph[], boolean vis[], int start){
-        Queue<Integer> q=new LinkedList<>();
-        q.add(start);
-
-        while (!q.isEmpty()){
-            int curr = q.remove();
-            if(vis[curr] == false){
-                System.out.print(curr+" ");
-                vis[curr] = true;
-                for(int i=0; i<graph[curr].size(); i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for(int i=0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(vis[e.dest] == false){
+                dfs(graph, e.dest, vis);
             }
         }
     }
+
     public static void main(String[] args) {
         int V = 7;
         ArrayList<Edge> graph[]=new ArrayList[V];
         createGraph(graph);
 
-        boolean[] vis=new boolean[V];
-        for(int i=0; i<V; i++){  //this will also cover in case we have disconnected graph
+        boolean vis[]=new boolean[V];
+        for(int i=0; i<V; i++){
             if(vis[i] == false){
-                bfs(graph, vis, i);
+                dfs(graph, i, vis);
             }
         }
         System.out.println();
