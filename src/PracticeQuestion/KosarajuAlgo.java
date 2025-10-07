@@ -78,13 +78,16 @@ public class KosarajuAlgo {
         }
 
         //step3: run loop on transpose graph through take one by one stack peek
+        int counter = 0;
         while (!st.isEmpty()){
             int curr = st.pop();
             if(!vis[curr]){
+                counter++;
                 dfs(transpose, curr, vis);
                 System.out.println();
             }
         }
+        System.out.println("total no. of SCC: "+counter);
     }
     public static void main(String[] args) {
         int V = 5;

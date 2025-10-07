@@ -6,10 +6,10 @@ public class StringComparison {
     public static void main(String[] args) {
         System.out.println('a');
         System.out.println((int)'a');//97 is the ASCII value of a
-        System.out.println((int)'z');//122 is the ASCII value of a
+        System.out.println((int)'z');//122 is the ASCII value of z
 
-        System.out.println((int)'A');//65 is the ASCII value of a
-        System.out.println((int)'Z');//90 is the ASCII value of a
+        System.out.println((int)'A');//65 is the ASCII value of A
+        System.out.println((int)'Z');//90 is the ASCII value of Z
 
         System.out.println((char)(97+'a'));//ASCII value
         System.out.println("===================");
