@@ -29,12 +29,10 @@ public class Implementation {
                 curr.children[idx]=new Node();
             }
 
-            if(i == word.length()-1){
-                curr.children[idx].eow=true;
-            }
-
             curr=curr.children[idx];
         }
+
+        curr.eow = true;
     }
 
     //search
@@ -47,13 +45,9 @@ public class Implementation {
                 return false;
             }
 
-            if(i == key.length()-1 && curr.children[idx].eow==false){
-                return false;
-            }
-
             curr=curr.children[idx];
         }
-        return true;
+        return curr.eow;
     }
 
     //word break problem
